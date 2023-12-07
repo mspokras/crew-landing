@@ -1,0 +1,168 @@
+
+
+footer{
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  grid-template-areas:
+    "about nav social";
+  padding: 32px 10%;
+  row-gap: 24px;
+  background: #141A7F;
+  color: var(--main-white, #FFF);
+
+
+  article{
+    grid-area: about;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    h1{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img{
+        width: 60px;
+        height: 64px;
+      }
+      span{
+        font-size: 28px;
+        font-weight: 600;
+
+        line-height: 130%; /* 36.4px */
+      }
+    }
+
+    p{
+      font-size: 16px;
+      line-height: 160%; /* 19.6px */
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+
+
+  .navigations{
+    margin-left: 48px;
+    grid-area: nav;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px;
+
+    ul{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 0px;
+
+      h3{
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 160%; /* 25.6px */
+        padding: 0px;
+        margin: 0px;
+      }
+
+      a{
+        text-decoration: none;
+        color: var(--main-white, #FFF);
+      }
+      a:hover{
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .arabic-cred {
+      text-align: right;
+      width: 100%;
+    }
+
+  }
+
+  .social{
+    margin-left: 48px;
+    grid-area: social;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+
+    ul{
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+
+  p {
+    margin: 4px;
+
+    &:first-of-type {
+      margin-top: 16px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+  footer{
+    padding: 32px 40px;
+    grid-template-areas:
+      "about nav nav"
+      "about social social";
+  }
+
+
+}
+
+
+@media only screen and (max-width: 992px) {
+
+  footer{
+    padding: 32px 40px;
+    grid-template-areas:
+      "about"
+      "nav"
+      "social";
+
+      .social{
+        align-items: flex-start;
+      }
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  footer{
+    padding: 32px 40px;
+    grid-template-areas:
+      "about"
+      "nav"
+      "social";
+
+      .navigations{
+        flex-direction: column;
+        gap: 0px;
+      }
+
+  }
+
+}
+
+
+
+
+

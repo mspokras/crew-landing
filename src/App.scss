@@ -1,0 +1,122 @@
+
+header{
+  padding: 50px 10%;
+  display: flex;
+  justify-content: space-between;
+
+  img,video{
+    max-width: 512px;
+    width: 40%;
+    z-index: -1;
+  }
+
+  .header-content{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    a{
+      text-decoration: none;
+    }
+
+    h1{
+      color: var(--neutral-90, #272728);
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 120%; /* 72px */
+      padding: 0px;
+      margin: 0px;
+    }
+
+    p{
+      color: var(--neutral-70, #575758);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 140%; /* 28px */
+      padding: 0px;
+      margin: 32px 0px 54px 0px;
+    }
+
+    button{
+      width: 281px;
+      height: 52px;
+    }
+
+  }
+
+}
+
+//media queries
+@media (max-width: 992px) {
+
+  header{
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    img,video{
+      order: 1;
+      width: 200px;
+    }
+
+    .header-content{
+      order:2;
+      align-items: center;
+
+      h1{
+        font-size: 40px;
+      }
+      p{
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+.button-contact{
+  position: relative;
+  border-radius:40px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 140px;
+  padding: 8px;
+  border: none;
+  z-index: 2;
+  color: var(--main-white, #FFF);
+  background: rgb(20,26,127);
+  background: linear-gradient(90deg, rgba(20,26,127,1) 17%, rgba(73,82,246,1) 100%);
+}
+.button-contact::before {
+  position: absolute;
+  content: '';
+  border-radius:40px;
+  padding: 8px;
+  font-size: 16px;
+  inset: 0; /* same as { top: 0; right: 0; bottom: 0; left: 0; } */
+  background: rgb(73,82,246);
+  background: linear-gradient(90deg, rgba(73,82,246,1) 17%, rgba(20,26,127,1) 100%);
+  z-index: -1;
+  opacity: 0;
+  animation: opacity-animation 0.5s linear ;
+  transition: opacity 0.25s linear;
+  outline:none;
+}
+
+.button-contact:hover::before {
+  opacity: 1;
+}
+@keyframes opacity-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
